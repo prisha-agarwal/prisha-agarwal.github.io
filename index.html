@@ -927,9 +927,9 @@
           <div class="tl-role">Machine Learning Engineer</div>
           <div class="tl-company">TurnPost AI · Berkeley, CA · Contract</div>
           <ul class="tl-bullets">
-            <li>Developed 5 deterministic NLP pipelines for screenplay analysis using spaCy, TF-IDF, and Logistic Regression, replacing GPT-4 API workflows and reducing runtime 90% (30 min → 3 min) at $0 API cost per script</li>
-            <li>Built pipelines for character relationship graph extraction, emotion detection (90% accuracy), plot structure, genre classification (80–85% across 18 categories), and entity recognition</li>
-            <li>Resolved a critical character offset bug by replacing str.index() with spaCy's ent.start_char, achieving 1,969 passing tests and fully deterministic output</li>
+            <li>Developed 5 deterministic NLP pipelines for screenplay analysis using spaCy, TF-IDF, and Logistic Regression, replacing GPT-4 API workflows and reducing runtime 90% (30min →3 min) at $0 API per script</li>
+            <li>Built pipelines for character relationship graph extraction, emotion detection (90% accuracy on human-labeled test set), plot structure analysis, genre classification (80-85% accuracy across 18 categories), and entity recognition</li>
+            <li>Resolved critical character offset bug by replacing str.index() with spaCy's ent.start_char for accurate entity positioning across repeated names, achieving 1,969 passing tests and fully deterministic and reproducible output</li>
           </ul>
         </div>
 
@@ -939,9 +939,8 @@
           <div class="tl-role">Data Director</div>
           <div class="tl-company">Youphoria · Remote</div>
           <ul class="tl-bullets">
-            <li>Owned the data strategy end-to-end: wrote SQL to analyze user funnels, retention cohorts, and behavioral segmentation; defined and monitored KPIs including DAU/MAU, activation rate, and churn</li>
-            <li>Designed and ran A/B tests, measuring conversion uplift and validating statistical significance before feature rollout — directly informing product decisions</li>
-            <li>Translated data findings into actionable product recommendations, presenting insights to leadership to guide roadmap prioritisation</li>
+            <li>Wrote SQL queries to analyze user funnels, retention cohorts, and behavioral segmentation; defined and monitored KPIs including DAU/MAU, activation rate, and churn, analyzing trends and drop-offs for product improvements</li>
+            <li>Performed A/B tests by measuring conversion rate and validating statistical significance before feature rollout</li>
           </ul>
         </div>
 
@@ -951,9 +950,8 @@
           <div class="tl-role">Market Strategy &amp; Growth</div>
           <div class="tl-company">US Space · Berkeley, CA</div>
           <ul class="tl-bullets">
-            <li>Led market research and strategic rebranding to reposition US Space for investor fundraising; rebuilt the investor pitch deck end-to-end to translate technical vision into a compelling, investor-ready narrative</li>
-            <li>Defined go-to-market strategy, identified target segments, and secured letters of intent from partner companies to support seed fundraising</li>
-            <li>Synthesised competitive landscape and user needs into product positioning recommendations adopted by founding team</li>
+            <li>Led market research and strategic rebranding to reposition US Space for investor fundraising, rebuilding the investor pitch deck end-to-end to translate technical vision into an investor ready narrative</li>
+            <li>Secured letters of intent from partner companies, supporting early go-to-market strategy and seed fundraising</li>
           </ul>
         </div>
 
@@ -963,8 +961,8 @@
           <div class="tl-role">Software Engineer Intern</div>
           <div class="tl-company">Krypton Consulting Inc. · Newark, CA</div>
           <ul class="tl-bullets">
-            <li>Built a secure authentication frontend with React + Vite and Supabase Auth, enabling gated access via email/password, OAuth (Google / Facebook / Apple), and password reset flows</li>
-            <li>Implemented persistent sessions via Supabase JWT storage with a Remember Me toggle; deployed to Vercel for production</li>
+            <li>Built a secure authentication frontend with React + Vite and Supabase Auth, enabling gated access to an AI chat platform through email/password login, OAuth (Google / Facebook / Apple), and password reset flows</li>
+            <li>Implemented persistent sessions via Supabase JWT storage with a Remember Me toggle that signs users out on next app load when unchecked, and deployed to Vercel for production</li>
           </ul>
         </div>
 
@@ -985,8 +983,8 @@
           <div class="tl-role">Machine Learning Researcher</div>
           <div class="tl-company">San Jose State University · San Jose, CA</div>
           <ul class="tl-bullets">
-            <li>Improved LLM response relevance by building a RAG pipeline using LangChain, OpenAI Embeddings, and ChromaDB, enabling semantic retrieval over domain-specific documents</li>
-            <li>Conducted 20+ literature reviews on Explainable AI (XAI) across healthcare, finance, and law to identify deployment risks and best practices</li>
+            <li>Improved response relevance of LLM outputs by building a Retrieval-Augmented Generation (RAG) pipeline using LangChain, OpenAI Embeddings, and ChromaDB as the vector store, enabling semantic retrieval over domain-specific documents for accurate responses to real-world queries grounded in retrieved evidence</li>
+            <li>Evaluated trustworthiness and interpretability of ML systems by conducting 20+ literature reviews/case studies on Explainable AI (XAI) studies across healthcare, finance, and law to identify deployment risks and best practices</li>
           </ul>
         </div>
 
@@ -1015,7 +1013,7 @@
           <p class="project-year">Oct 2025</p>
           <h3 class="project-title">Pebble</h3>
           <p class="project-desc">
-            Identified a real user problem — students losing focus without realising it — and designed + built the full solution end-to-end. A Pomodoro companion that tracks behavioral signals (gaze, posture, hand movement, phone usage) to detect distraction and deliver real-time voice nudges. Trained an XGBoost classifier on 4,000 self-collected labeled frames; shipped a Flask API + React frontend with a live 0–100 focus score.
+            Built an intelligent study companion with a Pomodoro timer that tracks behavioral signals (including gaze, posture, hand movement, and phone usage) to detect loss of focus and deliver real-time voice reminders via VAPI. Trained an XGBoost classifier on 4,000 self-collected labeled frames using MediaPipe facial landmarks, head pose estimation via OpenCV solvePnP, and YOLOv8 phone detection to output a real-time 0-100 focus score. Built a Flask REST API backend serving live focus scores to a React + TypeScript + Zustand frontend, with Flask-CORS enabling camera processing and API request handling across the CV pipeline and browser.
           </p>
           <div class="stack-row">
             <span class="stack-pill">React</span>
@@ -1042,7 +1040,7 @@
           <p class="project-year">Jul – Aug 2024</p>
           <h3 class="project-title">Gloss Over</h3>
           <p class="project-desc">
-            A curated iOS app for public-speaking resources — structured Swift interface with dynamic navigation, search, and personalised improvement pathways. Designed from scratch: information architecture, navigation flows, and the full visual language.
+            Built a structured Swift interface with dynamic navigation and search features, allowing users to quickly browse curated public-speaking resources through selected personalized improvement pathways.
           </p>
           <div class="stack-row">
             <span class="stack-pill">Swift</span>
