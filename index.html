@@ -40,18 +40,19 @@
       *, *::before, *::after { cursor: none !important; }
     }
     .cursor-dot, .cursor-ring {
-      position: fixed; pointer-events: none; z-index: 9999;
-      border-radius: 50%; transform: translate(-50%,-50%);
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+      border-radius: 50%; will-change: transform;
+      transform: translate3d(-50%,-50%,0);
+      opacity: 0; transition: opacity .2s ease;
     }
+    .cursor-dot.live, .cursor-ring.live { opacity: 1; }
     .cursor-dot {
       width: 7px; height: 7px; background: var(--accent);
-      transition: transform .15s ease;
     }
-    .cursor-dot.hov { transform: translate(-50%,-50%) scale(2.8); }
     .cursor-ring {
       width: 30px; height: 30px; background: transparent;
       border: 1.5px solid rgba(184,144,106,.42);
-      transition: width .25s ease, height .25s ease, border-color .25s;
+      transition: opacity .2s ease, width .25s ease, height .25s ease, border-color .25s;
     }
     .cursor-ring.hov { width: 52px; height: 52px; border-color: rgba(184,144,106,.7); }
 
@@ -870,7 +871,7 @@
             </div>
             <div>
               <div class="about-meta-label">Relevant Coursework</div>
-              <div class="about-meta-val">Object Oriented Programming · Data Structures &amp; Algorithms · Discrete Mathematics · Abstract Linear Algebra</div>
+              <div class="about-meta-val">Data Structures &amp; Algorithms · Artificial Intelligence · Computer Networks · Data Science · Abstract Linear Algebra · Abstract Algebra · Discrete Math · Object-Oriented Programming</div>
             </div>
           </div>
         </div>
@@ -915,10 +916,14 @@
 
         <div class="tl-item fade-up">
           <div class="tl-year-bg">2026</div>
-          <div class="tl-date">May 2026 — Present</div>
+          <div class="tl-date">May 2026 — Aug 2026</div>
           <div class="tl-role">Software Engineer Intern</div>
           <div class="tl-company">Snorkel AI · San Francisco, CA</div>
-          <ul class="tl-bullets"><li>Incoming Summer 2026</li></ul>
+          <ul class="tl-bullets">
+            <li>Shipped a React/TypeScript admin page that replaced scattered docs as the single editable source of metadata for 50+ current and all future projects, with Redux-backed per-section saves, TanStack Router unsaved-change guards, and duplicate-name checks for simultaneous edits; surfaced this to contracted experts in their own view</li>
+            <li>Built the Python/FastAPI backend that resolves payment tiers for ~2,000 experts by country and entity, selects the currently active rate deterministically, and serves it via an access-controlled REST API endpoint</li>
+            <li>Launched an in-app project update feed to replace manually sent out-of-band messages, with a PostgreSQL schema (SQLAlchemy + Alembic), a paginated endpoint, an admin posting page, and a searchable expert view</li>
+          </ul>
         </div>
 
         <div class="tl-item fade-up">
@@ -927,9 +932,9 @@
           <div class="tl-role">Machine Learning Engineer</div>
           <div class="tl-company">TurnPost AI · Berkeley, CA · Contract</div>
           <ul class="tl-bullets">
-            <li>Developed 5 deterministic NLP pipelines for screenplay analysis using spaCy, TF-IDF, and Logistic Regression, replacing GPT-4 API workflows and reducing runtime 90% (30min →3 min) at $0 API per script</li>
+            <li>Replaced GPT-4 API workflows with 5 deterministic NLP pipelines using spaCy, TF-IDF, and Logistic Regression for screenplay analysis, cutting runtime by 90% (30 → 3 min) and API cost to $0 per script</li>
             <li>Built pipelines for character relationship graph extraction, emotion detection (90% accuracy on human-labeled test set), plot structure analysis, genre classification (80-85% accuracy across 18 categories), and entity recognition</li>
-            <li>Resolved critical character offset bug by replacing str.index() with spaCy's ent.start_char for accurate entity positioning across repeated names, achieving 1,969 passing tests and fully deterministic and reproducible output</li>
+            <li>Fixed a critical character offset bug by replacing str.index() with spaCy's ent.start_char, correctly positioning repeated names, achieving 1,969 passing tests and fully deterministic and reproducible output</li>
           </ul>
         </div>
 
@@ -962,7 +967,7 @@
           <div class="tl-company">Krypton Consulting Inc. · Newark, CA</div>
           <ul class="tl-bullets">
             <li>Built a secure authentication frontend with React + Vite and Supabase Auth, enabling gated access to an AI chat platform through email/password login, OAuth (Google / Facebook / Apple), and password reset flows</li>
-            <li>Implemented persistent sessions via Supabase JWT storage with a Remember Me toggle that signs users out on next app load when unchecked, and deployed to Vercel for production</li>
+            <li>Implemented persistent sessions via Supabase JWT storage with a Remember Me toggle that signs users out on next app load when unchecked, and deployed to Vercel for production with environment-variable config</li>
           </ul>
         </div>
 
@@ -1010,6 +1015,28 @@
       <div class="project-spread fade-up">
         <div class="project-spread-num">01</div>
         <div>
+          <p class="project-year">Aug 2026 · Finalist @ Physical AI Hackathon (Hosted by NVIDIA, Nebius &amp; more)</p>
+          <h3 class="project-title">Humanoid Yoga Instructor</h3>
+          <p class="project-desc">
+            Built a real-time coaching pipeline that tracks 33 MediaPipe body landmarks from webcam video and computes joint angles to classify a user's specific pose alignment error, rather than just flagging "incorrect." Integrated motion-capture SONIC data with a MuJoCo-simulated Unitree G1 humanoid that physically demonstrates the targeted correction to guide the user to the correct pose in real time.
+          </p>
+          <div class="stack-row">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">MediaPipe</span>
+            <span class="stack-pill">MuJoCo</span>
+            <span class="stack-pill">Unitree G1</span>
+            <span class="stack-pill">OpenCV</span>
+            <span class="stack-pill">Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/prisha-agarwal" target="_blank" rel="noopener" class="btn-arrow">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-spread fade-up">
+        <div class="project-spread-num">02</div>
+        <div>
           <p class="project-year">Oct 2025</p>
           <h3 class="project-title">Pebble</h3>
           <p class="project-desc">
@@ -1035,7 +1062,7 @@
       </div>
 
       <div class="project-spread fade-up">
-        <div class="project-spread-num">02</div>
+        <div class="project-spread-num">03</div>
         <div>
           <p class="project-year">Jul – Aug 2024</p>
           <h3 class="project-title">Gloss Over</h3>
@@ -1087,6 +1114,8 @@
           <div class="skills-row-label">Frameworks</div>
           <div class="skills-row-items">
             <span class="skill-name">React</span><span class="skill-sep">✦</span>
+            <span class="skill-name">Redux</span><span class="skill-sep">✦</span>
+            <span class="skill-name">FastAPI</span><span class="skill-sep">✦</span>
             <span class="skill-name">Flask</span><span class="skill-sep">✦</span>
             <span class="skill-name">spaCy</span><span class="skill-sep">✦</span>
             <span class="skill-name">XGBoost</span><span class="skill-sep">✦</span>
@@ -1098,7 +1127,11 @@
           <div class="skills-row-label">Tools</div>
           <div class="skills-row-items">
             <span class="skill-name">Git</span><span class="skill-sep">✦</span>
+            <span class="skill-name">Docker</span><span class="skill-sep">✦</span>
             <span class="skill-name">AWS · GCP</span><span class="skill-sep">✦</span>
+            <span class="skill-name">PostgreSQL</span><span class="skill-sep">✦</span>
+            <span class="skill-name">Playwright</span><span class="skill-sep">✦</span>
+            <span class="skill-name">Vercel</span><span class="skill-sep">✦</span>
             <span class="skill-name">OpenCV</span><span class="skill-sep">✦</span>
             <span class="skill-name">Supabase</span><span class="skill-sep">✦</span>
             <span class="skill-name">ChromaDB</span><span class="skill-sep">✦</span>
@@ -1322,19 +1355,29 @@
     const dot  = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
     if (dot && ring && window.matchMedia('(hover: hover)').matches) {
-      let rX = 0, rY = 0, mX = 0, mY = 0;
+      let mX = innerWidth / 2, mY = innerHeight / 2;
+      let rX = mX, rY = mY, scale = 1, target = 1, live = false;
+
       document.addEventListener('mousemove', e => {
         mX = e.clientX; mY = e.clientY;
-        dot.style.left = mX + 'px'; dot.style.top = mY + 'px';
-      });
+        if (!live) {
+          live = true; rX = mX; rY = mY;
+          dot.classList.add('live'); ring.classList.add('live');
+        }
+      }, { passive: true });
+
       (function tick() {
-        rX += (mX - rX) * 0.11; rY += (mY - rY) * 0.11;
-        ring.style.left = rX + 'px'; ring.style.top = rY + 'px';
+        // ring trails the pointer; dot stays locked to it
+        rX += (mX - rX) * 0.3;  rY += (mY - rY) * 0.3;
+        scale += (target - scale) * 0.2;
+        dot.style.transform  = `translate3d(${mX}px, ${mY}px, 0) translate(-50%,-50%) scale(${scale})`;
+        ring.style.transform = `translate3d(${rX}px, ${rY}px, 0) translate(-50%,-50%)`;
         requestAnimationFrame(tick);
       })();
+
       document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => { dot.classList.add('hov'); ring.classList.add('hov'); });
-        el.addEventListener('mouseleave', () => { dot.classList.remove('hov'); ring.classList.remove('hov'); });
+        el.addEventListener('mouseenter', () => { target = 2.8; ring.classList.add('hov'); });
+        el.addEventListener('mouseleave', () => { target = 1;   ring.classList.remove('hov'); });
       });
     }
   </script>
